@@ -1,11 +1,11 @@
 {
   "AWS_REGION": "eu-west-2",
-  "AWS_ACCOUNT_ID": "<<your specific value>>",
-  "EKS_CLUSTER": "<<your specific value>>",
+  "AWS_ACCOUNT_ID": "211663170959",
+  "EKS_CLUSTER": "eks-dsi-dev-cluster-eu-west-2",
   "NAMESPACE": "ns-dpn-01",
-  "IMAGE_REGISTRY": "<<your specific value>>",
-  "FILESCAN_SOURCE_BUCKET": "<<your specific value>>",
-  "FILESCAN_DEST_BUCKET": "<<your specific value>>",
+  "IMAGE_REGISTRY": "ghcr.io/energy-dsi",
+  "FILESCAN_SOURCE_BUCKET": "dpn-filescan-source",
+  "FILESCAN_DEST_BUCKET": "dpn-filescan-destination",
   "FILESCAN_SNS_TOPIC_NAME": "dpn-dev-01-guardduty-findings2",
   "FILESCAN_SQS_QUEUE_NAME": "dpn-dev-01-file-scan-results2"
 }
