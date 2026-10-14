@@ -19,7 +19,7 @@ cloudProvider: aws
 namespace: ns-dpn-01
 
 image:
-  repository: <<your specific value>>/dpn-federator-certificate-manager
+  repository: ghcr.io/energy-dsi/dpn-federator-certificate-manager
 
 vault:
   uri: "https://vault-https.ns-dpn-01.svc.cluster.local:8200"
@@ -40,13 +40,13 @@ vault:
 # TODO: confirm with app team before real deploy — placeholders carried over
 # from ../test-dpn01.yaml, same as that file's own TODO.
 oauth2:
-  tokenUri: "https://<<your specific value>>/realms/management-node/protocol/openid-connect/token"
-  clientId: "<<your specific value>>"
+  tokenUri: "https://auth-mtls.dsm01.dsipreprod1.neso.energy/realms/management-node/protocol/openid-connect/token"
+  clientId: "9b732c28-66e0-4744-9ff4-6a55d7b3de6f"
   authMode: "private_key_jwt"
   jwtAlgorithm: "RS256"
 
 managementNode:
-  baseUrl: "https://<<your specific value>>"
+  baseUrl: "https://management.dsm01.dsipreprod1.neso.energy"
 
 cert:
   renewalThresholdDays: "100"
@@ -56,8 +56,8 @@ cert:
     locality: ""
     org: "NESO"
     ou: ""
-    cn: "<<your specific value>>"
-    altNames: "<<your specific value>>,<<your specific value>>"
+    cn: "dpn01.aws-dsitest.neso.energy"
+    altNames: "producer.dpn01.aws-dsitest.neso.energy,consumer.dpn01.aws-dsitest.neso.energy"
 
 otel:
   env:
@@ -93,7 +93,7 @@ secretsManager:
 serviceAccount:
   create: true
   name: "dpn-certificate-manager"
-  irsaRoleArn: "<<your specific value>>"
+  irsaRoleArn: "arn:aws:iam::211663170959:role/vault-irsa-role"
 
 resources:
   requests:
