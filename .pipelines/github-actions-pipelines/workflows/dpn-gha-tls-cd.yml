@@ -128,7 +128,7 @@ on:
 env:
   PARAMETERS_FILE: .github/config/${{ inputs.cloud }}/${{ inputs.environment }}-${{ inputs.cluster }}.json
   TLS_SCRIPT: .github/config/scripts/create-dpn-tls.sh
-  HUB_ROLE_ARN: <<your specific value>>
+  HUB_ROLE_ARN: arn:aws:iam::211663170959:role/OIDC-DPN-Role
 
 permissions:
   id-token: write
